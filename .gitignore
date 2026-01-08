@@ -18,6 +18,7 @@ venv/
 .idea/
 .vscode/
 
+Project Analysis metrics.docx
 # OS
 .DS_Store
 Thumbs.db
