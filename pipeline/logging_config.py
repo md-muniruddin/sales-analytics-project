@@ -2,7 +2,7 @@ import logging
 import os
 from logging.handlers import RotatingFileHandler
 
-# Base directory = project root (one level up from pipelines/)
+## Base directory = project root (one level up from pipelines/)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 LOG_DIR = os.path.join(BASE_DIR, "logs")
