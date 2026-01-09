@@ -36,7 +36,9 @@ def add_order_flags(df: pd.DataFrame) -> pd.DataFrame:
     df["has_carrier_date"] = df["order_delivered_carrier_date"].notna()
     df["has_delivery_date"] = df["order_delivered_customer_date"].notna()
 
-    df["is_canceled"] = df["order_status"].isin(["canceled", "unavailable"])
+    df["is_canceled"] = (df["order_status"] == "canceled")
+    df["is_unavailable"] = (df["order_status"] == "unavailable")
+    df["is_delivered"] = (df["order_status"] == "delivered")
 
     return df
 

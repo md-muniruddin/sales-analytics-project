@@ -70,7 +70,9 @@ def main():
             "has_approved_date",
             "has_carrier_date",
             "has_delivery_date",
-            "is_canceled"
+            "is_canceled",
+            "is_unavailable",
+            "is_delivered"
         ]
 
         fact_orders_df = orders[fact_orders_cols]

@@ -27,6 +27,9 @@ CREATE TABLE fact_orders (
     has_carrier_date BIT NOT NULL,
     has_delivery_date BIT NOT NULL,
     is_canceled BIT NOT NULL,
+    is_unavailable BIT NOT NULL,,
+    is_delivered BIT NOT NULL,
+
 
     CONSTRAINT pk_fact_orders
         PRIMARY KEY (order_id)
