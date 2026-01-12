@@ -50,6 +50,7 @@ def main():
             'product_length_cm',
             'product_height_cm',
             'product_width_cm',
+            'product_category_name_english'
             'has_Unknown_category'
         ]
 
