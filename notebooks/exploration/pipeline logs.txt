@@ -1,2 +1,0 @@
-2026-01-04 21:48:56,909 - pipeline logger - INFO - loading cleaned order items data from directory
-2026-01-04 21:48:56,909 - pipeline logger - ERROR - Failed to load order items data due to:read_csv() missing 1 required positional argument: 'filepath_or_buffer'

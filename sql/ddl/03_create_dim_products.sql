@@ -8,6 +8,7 @@ product_weight_g DECIMAL(10,2) NOT NULL,
 product_length_cm DECIMAL(10,2) NOT NULL,
 product_height_cm DECIMAL(10,2) NOT NULL,
 product_width_cm DECIMAL(10,2) NOT NULL,
+product_category_name_english VARCHAR(50) NULL,
 has_Unknown_category BIT NOT NULL,
 CONSTRAINT pk_dim_products PRIMARY KEY (product_id)
 
@@ -17,6 +18,7 @@ CONSTRAINT pk_dim_products PRIMARY KEY (product_id)
 CREATE INDEX idx_dim_products
     ON dim_products (product_id);
 
+-- after loading data update product category name
 update dim_products
 set product_category_name='UNKNOWN'
 where has_Unknown_category=1

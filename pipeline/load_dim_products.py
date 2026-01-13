@@ -19,7 +19,7 @@ def main():
         ITEMS_FILE = os.path.join(DATA_DIR, "products_clean.csv")
 
         if not os.path.exists(ITEMS_FILE):
-            raise FileNotFoundError(f"Order items file not found: {ITEMS_FILE}")
+            raise FileNotFoundError(f"Products file not found: {ITEMS_FILE}")
 
         # -------------------------------
         # SQL Server connection
