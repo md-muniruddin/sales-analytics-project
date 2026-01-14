@@ -62,6 +62,18 @@ What to drill
 
     If new-customer share rises → AOV falls naturally.
 
+Pattern A — Customer mix explains AOV decline
+    Share of new customer orders ↑
+    AOV_new < AOV_repeat
+    Portfolio AOV trends downward
+    → Customer mix is a primary or co-primary driver
+Pattern B — Customer mix does NOT explain AOV decline
+    New/repeat share stable
+    OR AOV_new ≈ AOV_repeat
+    OR repeat customers dominate revenue
+    → Customer mix is not the cause
+Stop immediately if Pattern B holds.
+
 3️⃣ Basket composition (within-order behavior)
 
 This is more subtle and often ignored.
@@ -110,4 +122,23 @@ This causes:
 
     The business actually expanded geographically
 
+Case A — Geography matters
+
+You’ll see:
+    Order growth concentrated in:
+    Smaller states
+    Less affluent regions
+    These states have lower AOV
+    Portfolio AOV declines
+Conclusion
+    “Demand expansion into lower-AOV regions contributed to the AOV decline.”
+This becomes a secondary or tertiary driver, never primary (product mix already won).
+Case B — Geography does NOT matter
+You’ll see:
+    Top states (e.g., SP, RJ) still dominate
+    Their AOVs are at or above portfolio
+    Growth proportional across regions
+Conclusion
+    “Geographic expansion did not materially impact AOV.”
+This is a clean elimination, not a failure.
 Otherwise, it’s speculative.

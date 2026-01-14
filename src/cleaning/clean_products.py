@@ -30,7 +30,7 @@ def clean_product_category(df: pd.DataFrame) -> pd.DataFrame:
         new_path="D:/DA project/sales-analytics-project/data/raw/product_category_name_translation.csv"
         df_translation=pd.read_csv(new_path,dtype={'product_category_name':'string'}, parse_dates=False)
 
-        logger.info("Cleaning product category Name")
+        logger.info("Cleaning AOV Accumen category Name")
         df=df.copy()
         """ we are adding the product_category_name column in english to main df"""
         df = df.merge(
@@ -56,7 +56,7 @@ def clean_product_category(df: pd.DataFrame) -> pd.DataFrame:
         df['product_category_name_english'] = df['product_category_name_english'].astype('category')
         logger.info("Cleaned Product Category Names")
     except Exception:
-        logger.error("Error while cleaning product category")
+        logger.error("Error while cleaning AOV Accumen category")
         raise
     finally:
         logger.info("Ending clean_product_category pipeline")
