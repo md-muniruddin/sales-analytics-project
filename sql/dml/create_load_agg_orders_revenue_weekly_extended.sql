@@ -12,7 +12,6 @@ CREATE TABLE agg_orders_revenue_weekly_extended (
     CONSTRAINT pk_agg_orders_revenue_weekly_ext
         PRIMARY KEY CLUSTERED (year_week)
 );
-
 WITH weekly_base AS (
     SELECT
         d.year_week,
@@ -25,11 +24,16 @@ WITH weekly_base AS (
         ON d.date = o.order_purchase_date
     GROUP BY d.year_week
     HAVING COUNT(DISTINCT d.date) = 7
-),
-weekly_revenue AS (
+)
+,weekly_revenue AS (
     SELECT
         d.year_week,
-        SUM(oi.price) AS gross_revenue
+        SUM(oi.price) AS gross_revenue,
+        count(distinct o.order_id) as total_orders,
+        sum(case
+        when o.is_delivered=1 then oi.price else 0 END) as delivered_revenue,
+        --SUM(CASE WHEN o.is_delivered = 1 THEN 1 ELSE 0 END) AS delivered_orders,
+        --SUM(CASE WHEN o.is_canceled = 1 THEN 1 ELSE 0 END) AS cancelled_orders
     FROM fact_order_items oi
     JOIN fact_orders o
         ON o.order_id = oi.order_id
@@ -59,7 +63,7 @@ SELECT
     CASE
         WHEN b.delivered_orders = 0 THEN NULL
         ELSE
-            CAST(r.gross_revenue AS DECIMAL(18,2)) /
+            CAST(r.delivered_revenue AS DECIMAL(18,2)) /
             CAST(b.delivered_orders AS DECIMAL(18,2))
     END AS revenue_per_delivered_order
 FROM weekly_base b
